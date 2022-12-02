@@ -3,7 +3,7 @@ from flask import jsonify
 from flask import request
 from flask_cors import CORS
 import os
-import win32print
+# import win32print
 
 PRINTER_NAME = ''
 
@@ -18,12 +18,12 @@ def api():
 
 @app.route('/dotmatrix/print', methods=['POST'])
 def api_post_print():
-    data = request.form['printer_data']
-    p = win32print.OpenPrinter(PRINTER_NAME)
-    job = win32print.StartDocPrinter(p, 1, ("test of raw data", None, "RAW"))
-    win32print.StartPagePrinter(p)
-    win32print.WritePrinter(p, data.encode())
-    win32print.EndPagePrinter(p)
+    data = request.form['print_data']
+    # p = win32print.OpenPrinter(PRINTER_NAME)
+    # job = win32print.StartDocPrinter(p, 1, ("test of raw data", None, "RAW"))
+    # win32print.StartPagePrinter(p)
+    # win32print.WritePrinter(p, data.encode())
+    # win32print.EndPagePrinter(p)
     return jsonify({'status': 'success', 'data': data})
 
 
