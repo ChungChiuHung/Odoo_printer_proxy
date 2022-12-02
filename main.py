@@ -16,7 +16,7 @@ def api():
     return jsonify({'message': 'Hello World'})
 
 
-@app.route('/api/print', methods=['POST'])
+@app.route('/dotmatrix/print', methods=['POST'])
 def api_post_print():
     data = request.form['printer_data']
     p = win32print.OpenPrinter(PRINTER_NAME)
