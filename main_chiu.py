@@ -12,6 +12,7 @@ import win32print
 
 
 # PRINTER_NAME = 'EPSON LQ-690C ESC/P2'
+# Ref. from https://github.com/Solomoriah/MSWinPrint.git 
 # convert the dc into a "printer dc"
 # get default printer
 PRINTER_NAME = win32print.GetDefaultPrinter()
